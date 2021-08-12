@@ -1,5 +1,7 @@
 {
   "name": "Raaz",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

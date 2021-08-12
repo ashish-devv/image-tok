@@ -1,20 +1,24 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+
+
+<ion-header>
+  <ion-toolbar padding class="background" >
+    <ion-title style="text-align: center;">Raaz</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content padding class="background" >
+  <ion-grid>
+    <ion-row class="ion-align-self-center">
+      <ion-col size="6">
+        <ion-button (click)="takePhoto(1)">Show Camera</ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button (click)="takePhoto(0)">Show Album</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div *ngIf="base64Image">
+    <img [src]="base64Image">
+    <ion-button (click)="upload()">Upload to Firebase!</ion-button>
   </div>
 </ion-content>
